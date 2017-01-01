@@ -1,7 +1,5 @@
+
 $(document).foundation();
-
-
-
 
 /*Initial load slide*/
 $.fn.fadeIn2 = function() {
@@ -11,30 +9,35 @@ $.fn.fadeIn2 = function() {
 	return this;
 
 }
+//End fade in 
 
 /*slogan slide*/
 $.fn.topSlide1 = function() {
-	setTimeout ( function()
-	{
-		$('.part1').delay(1000).animate({ opacity: '1'  }, 'slow');
+
+	setTimeout ( function(){
+		$('.part1').delay(500).animate({ opacity: '1'  }, 'slow');
 		console.log('part 1 read');
 		    setTimeout (function() {
-			$('.part2').delay(1000).animate({  opacity: '1'}, 'slow');
+			$('.part2').delay(700).animate({  opacity: '1'}, 'slow');
 			console.log('part 2 read');
 				setTimeout(function() {
-					$('.part3').delay(1000).animate({  opacity: '1'  }, 'slow');
-					console.log('part 1 read');
+					$('.part3').delay(700).animate({  opacity: '1'  }, 'slow');
+					console.log('part 3 read');
+					
 				}, 1100);
 		}, 1100);
-	
+		
 	}, 1100);
 
 
 
 console.log('all read');
+
 	return this;
 
+
 }
+//End Top Slide 1
 
 
 
@@ -75,9 +78,11 @@ $.fn.blueBox = function (){
 /* Events Start Here */
 window.current = '#mag1';
 
-$('.part1').topSlide1();
-$('.bio').delay(500).fadeIn2();
 $('.menu').fadeUp();
+$('.part1').topSlide1();
+
+$('.bio').delay(500).fadeIn2();
+
 
 
 $('.first').blackBox();
@@ -86,83 +91,49 @@ $('.first').blackBox();
 
 
 $('.tab').click( function() {
-
-
 	//toggle the tabs
 	$(this).blackBox();
-
 	//Set ID
 	var id = $(this).get(0).id;
 	console.log(id);
- 
+
  	//Toggle the content section
-
- 
  	if ( id != current) {
-
- 			
  			if (current == '#mag1')
-
  			{
- 				
-
  				/*Starts the fading away transition*/
-
  				$('.part1').animate({ opacity:'0'}, 'slow');
  					$('.part2').animate({ opacity:'0'}, 'slow');
  						$('.part3').animate({ opacity:'0'}, 'slow');
  				$('.bio').fadeDown();
-
  				/*Slides up new page*/
  				$(id).fadeUp();
  				current = id;
-
  			}
-
  			else if (id == '#mag1') {
-
  		$(current).fadeDown();
-
  		$('.bio').fadeUp2();
-
  		setTimeout ( function (){
  		$('.part1').delay(200).animate({ opacity: '1'  }, 'slow');
  			$('.part2').delay(200).animate({ opacity: '1'  }, 'slow');
  				$('.part3').delay(200).animate({ opacity: '1'  }, 'slow');
  							}, 1000);
-
  		current = id; 
  		console.log('current');
-
-
  	}
 
  			else {
-	
 		$(current).fadeDown();
-
 		$(id).fadeUp();
-
 		$(current).css('top', '-200px');
-
-
 		//Set new current
  		current = id; 
-
  				}
-
  	};
-
- 	
-
-
 	 });
-
 /* Switch Animation */
 
 $('#post').click( function () {
-
-
 	$(this).blueBox();
 	$(".prelevel").fadeOut();
 	$(".postlevel").fadeIn();
@@ -171,15 +142,10 @@ $('#post').click( function () {
 });
 
 $('#pre').click( function () {
-
-
 	$(this).blueBox();
 	$(".postlevel").fadeOut();
-
 	$(".prelevel").fadeIn();
 	/*$(".triangle").delay(500).remove();*/
-
-
 });
 
 /*Second Switch*/
@@ -195,8 +161,6 @@ $('#post2').click( function () {
 });
 
 $('#pre2').click( function () {
-
-
 	$(this).blueBox();
 	$(".hidden").fadeOut();
 	$(".remove").delay(400).fadeIn();
@@ -204,25 +168,6 @@ $('#pre2').click( function () {
 
 
 });
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
